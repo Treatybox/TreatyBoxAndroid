@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#174d38">
+<title>TreatyBox</title>
+<style>
+:root{--green:#174d38;--green2:#123c2c;--cream:#f9f5e9;--gold:#ead9ad;--ink:#26352b;--muted:#687064;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+header{background:var(--green);color:white;padding:23px 18px 18px;border-radius:0 0 22px 22px}
+.brandrow{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:15px;background:var(--gold);color:var(--green);display:grid;place-items:center;font-size:27px;font-weight:800}
+h1{font-size:27px;margin:0 0 5px;letter-spacing:.2px}.tag{margin:0;color:#f4e8c9;font-size:13px;line-height:1.5}
+.trust{font-size:12px;color:#f4e8c9;margin:16px 0 0}
+nav{display:flex;gap:7px;padding:12px 12px 2px;position:sticky;top:0;background:var(--cream);z-index:2}
+nav button{flex:1;border:0;border-radius:11px;padding:11px 5px;background:#e9e4d2;color:var(--green);font-weight:700;font-size:12px}
+nav button.active{background:var(--green);color:white}
+main{padding:13px;max-width:680px;margin:auto}.hero{background:#e9e4d2;border-radius:18px;padding:19px;margin:3px 0 15px}
+h2{font-size:21px;color:var(--green);margin:0 0 9px}.hero p,.muted{font-size:14px;line-height:1.55;color:var(--muted);margin:0}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.pill{background:#fff;border-radius:20px;padding:8px 11px;font-size:12px;color:var(--green);font-weight:700}
+.section-title{font-size:19px;color:var(--green);margin:20px 2px 10px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{background:white;border:1px solid #e6dfce;border-radius:15px;padding:14px;min-width:0}
+.emoji{font-size:25px}.card h3{font-size:15px;color:var(--green);margin:8px 0 5px}.card p{font-size:12px;color:var(--muted);line-height:1.45;margin:0}.price{font-size:20px;color:var(--green);font-weight:800;margin-top:10px}
+.small{font-size:12px;color:var(--muted);line-height:1.5}
+form,.contactbox{background:white;border:1px solid #e6dfce;border-radius:16px;padding:16px}
+label{display:block;font-size:13px;font-weight:700;color:var(--green);margin:13px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d7d3c5;border-radius:10px;font-size:15px;background:#fff;color:var(--ink)}
+textarea{min-height:84px;resize:vertical}
+button.primary,.wa{display:block;width:100%;border:0;border-radius:12px;background:var(--green);color:white;padding:14px 16px;font-weight:700;font-size:15px;margin-top:14px;text-align:center;text-decoration:none}
+button.primary:active,.wa:active{background:var(--green2)}
+.notice{background:#f4ecd6;border-radius:11px;padding:12px;font-size:12px;line-height:1.5;color:#5e5a4b;margin-top:12px}
+.total{background:#e9e4d2;border-radius:12px;padding:12px;margin-top:12px;color:var(--green);font-weight:700}
+.contactline{padding:13px 0;border-bottom:1px solid #eee8da;font-size:14px;line-height:1.7}.contactline:last-child{border:0}
+footer{text-align:center;padding:20px 12px 26px;color:var(--muted);font-size:12px;line-height:1.7}
+.hidden{display:none!important}
+@media(min-width:560px){main{padding:18px}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brandrow"><div class="logo">TB</div><div><h1>TreatyBox</h1><p class="tag">Treat with box, treat with love.</p></div></div>
+  <p class="trust">Fresh ingredients · Hygienic preparation · Quality you can trust</p>
+</header>
+<nav>
+  <button class="active" data-page="home">Home</button>
+  <button data-page="menu">Menu</button>
+  <button data-page="order">Order inquiry</button>
+  <button data-page="contact">Contact</button>
+</nav>
+<main>
+<section id="home">
+  <div class="hero">
+    <h2>Good food for every occasion</h2>
+    <p>Snack boxes for school events, breakfast platters, lunch boxes and catering inquiries — thoughtfully prepared for your occasion.</p>
+    <div class="pills"><span class="pill">School events</span><span class="pill">Bulk orders</span><span class="pill">Customised boxes</span></div>
+    <button class="primary" onclick="showPage('order')">Request an order</button>
+  </div>
+  <h2 class="section-title">Explore our services</h2>
+  <div class="cards">
+    <div class="card"><div class="emoji">📦</div><h3>Snack Boxes</h3><p>Four box options for events and school functions.</p><div class="price">₹60–₹120</div></div>
+    <div class="card"><div class="emoji">🌅</div><h3>Breakfast</h3><p>Poha, upma, sabudana, vada pav and more.</p><div class="price">Enquire</div></div>
+    <div class="card"><div class="emoji">🍱</div><h3>Lunch & Tiffin</h3><p>Thali options and monthly lunch box inquiries.</p><div class="price">Enquire</div></div>
+    <div class="card"><div class="emoji">🎉</div><h3>Catering</h3><p>Customised food orders for your requirements.</p><div class="price">Enquire</div></div>
+  </div>
+  <div class="notice">Service area: Badlapur, Maharashtra. Please enquire about availability, minimum quantities, delivery and final pricing before confirming an order.</div>
+</section>
+<section id="menu" class="hidden">
+  <h2>Our Menu</h2><p class="muted">Snack box prices are per box. Breakfast, lunch and catering prices are shared after discussing your menu and quantity.</p>
+  <h3 class="section-title">Snack Boxes</h3>
+  <div class="cards">
+    <div class="card"><div class="emoji">🥪</div><h3>Budget Box</h3><p>A simple everyday snack selection.</p><div class="price">₹60</div></div>
+    <div class="card"><div class="emoji">🍘</div><h3>Standard Box</h3><p>A balanced mix of savoury snacks and treats.</p><div class="price">₹80</div></div>
+    <div class="card"><div class="emoji">🎈</div><h3>Special Box</h3><p>For school functions and special occasions.</p><div class="price">₹100</div></div>
+    <div class="card"><div class="emoji">✨</div><h3>Premium Box</h3><p>A premium snack selection for events.</p><div class="price">₹120</div></div>
+  </div>
+  <h3 class="section-title">Breakfast Options</h3>
+  <div class="cards">
+    <div class="card"><h3>Fritter Platter</h3><p>Vada, kanda bhaji, batata bhaji and pav.</p></div>
+    <div class="card"><h3>Sabudana</h3><p>Sabudana vada with curd or sabudana khichdi.</p></div>
+    <div class="card"><h3>Breakfast Favourites</h3><p>Veg upma, chapati bhaji and puri bhaji.</p></div>
+    <div class="card"><h3>More Options</h3><p>Poha, idli, medu vada and appe on inquiry.</p></div>
+  </div>
+  <h3 class="section-title">Lunch & Tiffin</h3>
+  <div class="cards">
+    <div class="card"><h3>Classic Thali</h3><p>Chapati, steamed rice, dal, veg sabzi and salad.</p></div>
+    <div class="card"><h3>Maharashtrian Thali</h3><p>Puri, rice, dal, batata bhaji and salad.</p></div>
+    <div class="card"><h3>Veg Delight</h3><p>Veg pulao, rice, dal and paneer or mixed veg curry.</p></div>
+    <div class="card"><h3>Monthly Tiffin</h3><p>Ask us about monthly mess and lunch box options.</p></div>
+  </div>
+  <div class="notice">Customised snack boxes and lunch boxes for staff are also available on inquiry. Menu items are subject to availability and confirmation.</div>
+  <button class="primary" onclick="showPage('order')">Enquire about menu</button>
+</section>
+<section id="order" class="hidden">
+  <h2>Order Inquiry</h2>
+  <p class="muted">Complete this form to prepare an inquiry message in WhatsApp. Sending the message does not automatically confirm your order.</p>
+  <form id="orderForm">
+    <label for="service">Service</label>
+    <select id="service" required>
+      <option value="Snack Boxes">Snack Boxes</option><option value="Breakfast">Breakfast</option><option value="Lunch & Tiffin">Lunch & Tiffin</option><option value="Catering / Custom Order">Catering / Custom Order</option>
+    </select>
+    <div id="boxWrap">
+      <label for="box">Snack box</label>
+      <select id="box">
+        <option value="Budget Box|60">Budget Box — ₹60</option>
+        <option value="Standard Box|80" selected>Standard Box — ₹80</option>
+        <option value="Special Box|100">Special Box — ₹100</option>
+        <option value="Premium Box|120">Premium Box — ₹120</option>
+      </select>
+    </div>
+    <label for="qty">Quantity</label><input id="qty" type="number" min="1" value="15" required>
+    <div id="total" class="total">Estimated subtotal: ₹1,200</div>
+    <label for="name">Your name / School / Organisation</label><input id="name" autocomplete="name" required placeholder="Enter your name">
+    <label for="phone">Contact number</label><input id="phone" type="tel" autocomplete="tel" required placeholder="Enter your phone number">
+    <label for="date">Required date</label><input id="date" type="date">
+    <label for="details">Menu preferences / delivery area / other details</label><textarea id="details" placeholder="Event, preferred items, delivery area, etc."></textarea>
+    <button class="primary" type="submit">Continue to WhatsApp</button>
+    <div class="notice">Your details are placed into a WhatsApp message for you to review and send. This app does not save orders to a database. Do not include payment card details or passwords.</div>
+  </form>
+</section>
+<section id="contact" class="hidden">
+  <h2>Contact TreatyBox</h2><p class="muted">For school events, bulk snack boxes, breakfast, lunch, monthly tiffin and customised catering inquiries.</p>
+  <div class="contactbox">
+    <div class="contactline"><strong>Email</strong><br><a href="mailto:Treatyboxes@gmail.com">Treatyboxes@gmail.com</a></div>
+    <div class="contactline"><strong>Phone 1</strong><br><a href="tel:+917038485318">7038485318</a></div>
+    <div class="contactline"><strong>Phone 2</strong><br><a href="tel:+917030386998">7030386998</a></div>
+    <div class="contactline"><strong>Service area</strong><br>Badlapur, Maharashtra</div>
+    <a class="wa" href="https://wa.me/917038485318?text=Hello%20TreatyBox%2C%20I%20would%20like%20to%20enquire%20about%20your%20menu." target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</section>
+</main>
+<footer>TreatyBox · Badlapur, Maharashtra<br>Fresh ingredients · Hygienic preparation · Quality you can trust</footer>
+<script>
+const pages=['home','menu','order','contact'];
+function showPage(page){
+  pages.forEach(p=>document.getElementById(p).classList.toggle('hidden',p!==page));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+const service=document.getElementById('service'), box=document.getElementById('box'), qty=document.getElementById('qty'), boxWrap=document.getElementById('boxWrap'), total=document.getElementById('total');
+function updateTotal(){
+  const isSnack=service.value==='Snack Boxes'; boxWrap.classList.toggle('hidden',!isSnack); total.classList.toggle('hidden',!isSnack);
+  if(isSnack){const price=Number(box.value.split('|')[1]);total.textContent='Estimated subtotal: ₹'+(Math.max(0,Number(qty.value)||0)*price).toLocaleString('en-IN');}
+}
+service.addEventListener('change',updateTotal);box.addEventListener('change',updateTotal);qty.addEventListener('input',updateTotal);updateTotal();
+document.getElementById('orderForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), quantity=qty.value;
+  if(!name||!phone||!quantity||Number(quantity)<1){alert('Please enter your name, contact number and a valid quantity.');return;}
+  const snack=service.value==='Snack Boxes';const selected=box.value.split('|');const price=snack?Number(selected[1]):0;
+  const dateValue=document.getElementById('date').value||'Not specified';
+  const details=document.getElementById('details').value.trim()||'None';
+  let msg='Hello TreatyBox! I would like to make an order inquiry.\\n\\nService: '+service.value+'\\n';
+  if(snack)msg+='Box: '+selected[0]+'\\nPrice per box: ₹'+price+'\\nEstimated subtotal: ₹'+(Number(quantity)*price).toLocaleString('en-IN')+'\\n';
+  msg+='Quantity: '+quantity+'\\nName / School: '+name+'\\nContact: '+phone+'\\nRequired date: '+dateValue+'\\nOther details: '+details+'\\n\\nPlease confirm availability, final pricing and delivery details.';
+  window.location.href='https://wa.me/917038485318?text='+encodeURIComponent(msg);
+});
+</script>
+</body></html>
